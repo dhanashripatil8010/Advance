@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================
+   BASIC
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +35,9 @@ body {
         );
 
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+
+    animation:
+        gradientMove 10s ease infinite;
 
     overflow-x: hidden;
 }
@@ -57,12 +63,15 @@ body {
 ========================= */
 
 .container {
+
     min-height: 100vh;
     width: 100%;
     max-width: 480px;
+
     margin: auto;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -74,12 +83,17 @@ body {
 
 
 .screen {
+
     width: 100%;
+
     text-align: center;
+
     display: none;
 
-    animation: screenIn .8s ease;
+    animation:
+        screenIn .7s ease;
 }
+
 
 .screen.active {
     display: block;
@@ -89,24 +103,33 @@ body {
 @keyframes screenIn {
 
     from {
+
         opacity: 0;
-        transform: translateY(30px) scale(.96);
+
+        transform:
+            translateY(30px)
+            scale(.96);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
 
 /* =========================
-   FIRST PAGE
+   INTRO
 ========================= */
 
 .intro-icon {
 
     font-size: 80px;
+
     margin-bottom: 25px;
 
     animation:
@@ -117,7 +140,7 @@ body {
 
 @keyframes floating {
 
-    0%, 100% {
+    0%,100% {
         transform: translateY(0);
     }
 
@@ -129,7 +152,8 @@ body {
 
 @keyframes glow {
 
-    0%, 100% {
+    0%,100% {
+
         filter:
             drop-shadow(
                 0 0 5px
@@ -138,6 +162,7 @@ body {
     }
 
     50% {
+
         filter:
             drop-shadow(
                 0 0 25px
@@ -150,7 +175,9 @@ body {
 .intro-title {
 
     font-size: 32px;
+
     line-height: 1.3;
+
     margin-bottom: 18px;
 }
 
@@ -162,17 +189,6 @@ body {
     text-shadow:
         0 0 15px
         rgba(255,100,200,.6);
-}
-
-
-.intro-text {
-
-    color: #f8dff1;
-
-    font-size: 17px;
-    line-height: 1.7;
-
-    margin-bottom: 25px;
 }
 
 
@@ -189,7 +205,8 @@ body {
         1px solid
         rgba(255,255,255,.16);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
         0 15px 50px
@@ -200,7 +217,12 @@ body {
 
 
 .intro-card p {
+
     margin-bottom: 12px;
+
+    color: #f8dff1;
+
+    line-height: 1.6;
 }
 
 
@@ -209,8 +231,20 @@ body {
 }
 
 
+.intro-text {
+
+    color: #f8dff1;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
 /* =========================
-   BUTTONS
+   BUTTON
 ========================= */
 
 button {
@@ -251,7 +285,8 @@ button:active {
 
 .continue-btn {
 
-    padding: 15px 30px;
+    padding:
+        15px 30px;
 
     border-radius: 50px;
 
@@ -262,13 +297,15 @@ button:active {
 
 @keyframes buttonGlow {
 
-    0%, 100% {
+    0%,100% {
+
         box-shadow:
             0 0 15px
             rgba(255,63,159,.35);
     }
 
     50% {
+
         box-shadow:
             0 0 30px
             rgba(255,63,159,.75);
@@ -295,13 +332,15 @@ button:active {
 
 @keyframes giftBounce {
 
-    0%, 100% {
+    0%,100% {
+
         transform:
             translateY(0)
             rotate(0deg);
     }
 
     50% {
+
         transform:
             translateY(-15px)
             rotate(3deg);
@@ -350,7 +389,7 @@ p {
 
 @keyframes heartbeat {
 
-    0%, 100% {
+    0%,100% {
         transform: scale(1);
     }
 
@@ -489,7 +528,7 @@ p {
 
 
 /* =========================
-   FLOATING ITEMS
+   FLOATING
 ========================= */
 
 .floating-item {
@@ -659,7 +698,7 @@ p {
 
 
 <!-- =================================================
-     PAGE 2 — GIFT
+     PAGE 2
 ================================================= -->
 
 <section
@@ -697,7 +736,7 @@ p {
 
 
 <!-- =================================================
-     PAGE 3 — BIRTHDAY
+     PAGE 3
 ================================================= -->
 
 <section
@@ -851,7 +890,8 @@ p {
 
 
 /* =========================================================
-   🔴 WHATSAPP NUMBER — ONLY CHANGE THIS LINE
+   ❤️ WHATSAPP NUMBER
+   ONLY THIS ONE LINE HAS THE NUMBER
 ========================================================= */
 
 const YOUR_WHATSAPP = "918010671239";
@@ -869,15 +909,10 @@ const questions = [
         "Tumhare liye hamari friendship ki sabse special baat kya hai?",
 
         options: [
-
             "🤝 Ek-dusre ko samajhna",
-
             "😂 Saath mein pagalpan",
-
             "🫶 Har situation mein support",
-
             "❤️ Bina kahe feelings samajh jaana"
-
         ]
     },
 
@@ -887,15 +922,10 @@ const questions = [
         "Jab tum low feel karte ho, tumhe meri kaunsi cheez sabse zyada achhi lagti hai?",
 
         options: [
-
             "🫂 Mera support karna",
-
             "👂 Tumhari baat sunna",
-
             "😂 Tumhe hasa dena",
-
             "❤️ Bas tumhare saath rehna"
-
         ]
     },
 
@@ -905,15 +935,10 @@ const questions = [
         "Agar hamari friendship ka ek moment hamesha ke liye save karna ho, kya choose karoge?",
 
         options: [
-
             "😂 Sabse funny memory",
-
             "🥹 Sabse emotional moment",
-
             "🌙 Late-night conversation",
-
             "📸 Koi unforgettable day"
-
         ]
     },
 
@@ -923,15 +948,10 @@ const questions = [
         "Tumhe kab laga ki main sirf ek friend nahi, balki genuine bestie hoon?",
 
         options: [
-
             "🫶 Jab maine tumhe support kiya",
-
             "🤫 Jab tumne mujh par trust kiya",
-
             "🥹 Kisi difficult time mein",
-
             "😂 Kisi completely crazy moment mein"
-
         ]
     },
 
@@ -941,15 +961,10 @@ const questions = [
         "Agar life mein sab kuch difficult ho raha ho, tum mujhse kya expect karoge?",
 
         options: [
-
             "🫂 Bas mere saath rehna",
-
             "👂 Meri baat sunna",
-
             "💪 Mujhe motivate karna",
-
             "❤️ Bina judge kiye samajhna"
-
         ]
     },
 
@@ -959,15 +974,10 @@ const questions = [
         "Hamari friendship mein tumhe sabse zyada kya value karta hai?",
 
         options: [
-
             "🤝 Trust",
-
             "❤️ Understanding",
-
             "😂 Comfort & craziness",
-
             "🫶 Loyalty"
-
         ]
     },
 
@@ -977,15 +987,10 @@ const questions = [
         "Agar future mein hum dono bahut busy ho jaayein, tum kya chahoge ki kabhi change na ho?",
 
         options: [
-
             "💬 Hamari conversations",
-
             "😂 Hamari bakchodi",
-
             "🤝 Hamara trust",
-
             "❤️ Hamari friendship"
-
         ]
     },
 
@@ -995,15 +1000,10 @@ const questions = [
         "Agar tum mujhe ek friendship promise de sakte ho, woh kya hoga?",
 
         options: [
-
             "🤝 Chahe kuch bhi ho, friendship nahi badlegi.",
-
             "🫶 Jab zarurat hogi, main hamesha rahunga.",
-
             "❤️ Distance kabhi friendship ko change nahi karega.",
-
             "😂 Main tumhe irritate karna kabhi band nahi karunga."
-
         ]
     },
 
@@ -1013,15 +1013,10 @@ const questions = [
         "Agar tum hamari friendship ko ek word mein define karo, kya hoga?",
 
         options: [
-
             "♾️ Forever",
-
             "🫶 Unbreakable",
-
             "😂 Crazy",
-
             "❤️ Priceless"
-
         ]
     },
 
@@ -1031,15 +1026,10 @@ const questions = [
         "Aur honestly… tumhare life mein meri jagah kya hai?",
 
         options: [
-
             "😎 Best friend",
-
             "🫂 Family jaisi",
-
             "😂 Permanent headache",
-
             "❤️ Someone I never want to lose"
-
         ]
     }
 
@@ -1058,7 +1048,7 @@ let answers = [];
 
 
 /* =========================================================
-   CHANGE SCREEN
+   SCREEN CHANGE
 ========================================================= */
 
 function showScreen(id) {
@@ -1081,7 +1071,7 @@ function showScreen(id) {
 
 
 /* =========================================================
-   PAGE 1 → GIFT
+   PAGE 1 → PAGE 2
 ========================================================= */
 
 function showGift() {
@@ -1199,7 +1189,7 @@ function showQuestion() {
 
 
 /* =========================================================
-   SELECT OPTION
+   SELECT ANSWER
 ========================================================= */
 
 function selectOption(element, index) {
@@ -1235,19 +1225,6 @@ function selectOption(element, index) {
 
 function nextQuestion() {
 
-    if (
-        answers[currentQuestion] === undefined
-    ) {
-
-        alert(
-            "Please select an option ❤️"
-        );
-
-        return;
-
-    }
-
-
     currentQuestion++;
 
 
@@ -1273,7 +1250,7 @@ function nextQuestion() {
 
 
 /* =========================================================
-   SEND ANSWERS TO WHATSAPP
+   📲 OPEN WHATSAPP
 ========================================================= */
 
 function sendAnswers() {
@@ -1307,10 +1284,18 @@ function sendAnswers() {
         "❤️ Happy Birthday Bestie!";
 
 
+    /*
+       Direct WhatsApp link.
+
+       Number:
+       918010671239
+
+       Message automatically
+       pre-filled hoga.
+    */
+
     const whatsappURL =
-        "https://wa.me/" +
-        YOUR_WHATSAPP +
-        "?text=" +
+        "https://wa.me/918010671239?text=" +
         encodeURIComponent(message);
 
 
@@ -1328,14 +1313,12 @@ function sendAnswers() {
 function createFloating() {
 
     const items = [
-
         "❤️",
         "💖",
         "✨",
         "⭐",
         "💫",
         "💕"
-
     ];
 
 
@@ -1402,14 +1385,12 @@ function createFloating() {
 function createConfetti() {
 
     const emojis = [
-
         "🎉",
         "❤️",
         "💖",
         "🎂",
         "✨",
         "🎈"
-
     ];
 
 
