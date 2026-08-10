@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -546,7 +548,7 @@ button:active {
 
 
 /* =========================
-   FLOATING HEARTS / STARS
+   FLOATING ITEMS
 ========================= */
 
 .floating-item {
@@ -684,8 +686,10 @@ button:active {
     <p class="intro-text">
 
         Ye surprise
-        <b>tumhare birthday ke shuru hone
-        se pehle hi start ho raha hai.</b>
+        <b>
+            tumhare birthday ke shuru hone
+            se pehle hi start ho raha hai.
+        </b>
         💖
 
     </p>
@@ -713,7 +717,7 @@ button:active {
 
 
 <!-- =================================================
-     GIFT
+     GIFT SCREEN
 ================================================= -->
 
 <section
@@ -905,15 +909,20 @@ button:active {
 
 
 /* =========================================================
-   WHATSAPP NUMBER
+   ONLY CHANGE THIS ONE LINE
 =========================================================
 
-   Example:
+   Example for an Indian number:
 
    const YOUR_WHATSAPP = "918010671239";
 
-   + sign mat lagana.
-   Spaces mat lagana.
+   Do NOT use:
+   +91 9876543210
+   091234567890
+   91 9876543210
+
+   Use:
+   919876543210
 
 ========================================================= */
 
@@ -1055,9 +1064,9 @@ const questions = [
 
     options: [
 
-        "💬 Hamari conversations",
+        "💬 Hamari Baate",
 
-        "😂 Hamari bakchodi",
+        "😂 Hamari meetings",
 
         "🤝 Hamara trust",
 
@@ -1142,7 +1151,7 @@ let answers = [];
 
 
 /* =========================================================
-   SCREEN
+   SCREEN CHANGE
 ========================================================= */
 
 function showScreen(id) {
@@ -1187,7 +1196,7 @@ function showGift() {
 
 
 /* =========================================================
-   GIFT → WISH
+   GIFT → BIRTHDAY WISH
 ========================================================= */
 
 function openGift() {
@@ -1313,7 +1322,7 @@ function showQuestion() {
 
 
 /* =========================================================
-   SELECT OPTION
+   SELECT ANSWER
 ========================================================= */
 
 function selectOption(
@@ -1357,7 +1366,7 @@ function selectOption(
 
 
 /* =========================================================
-   NEXT
+   NEXT QUESTION
 ========================================================= */
 
 function nextQuestion() {
@@ -1387,7 +1396,9 @@ function nextQuestion() {
 
         showQuestion();
 
-    } else {
+    }
+
+    else {
 
         showScreen(
             "finalScreen"
@@ -1402,22 +1413,42 @@ function nextQuestion() {
 
 
 /* =========================================================
-   WHATSAPP
+   SEND ANSWERS TO WHATSAPP
 ========================================================= */
 
 function sendAnswers() {
 
+    /*
+       Safety check:
+       Agar number replace nahi kiya,
+       to WhatsApp link open nahi hoga.
+    */
+
+    if (
+        YOUR_WHATSAPP ===
+        "YOUR_WHATSAPP_NUMBER"
+    ) {
+
+        alert(
+            "Please add your WhatsApp number in the code first ❤️"
+        );
+
+        return;
+
+    }
+
+
     let message =
-        "🎂 *BIRTHDAY QUIZ ANSWERS* ❤️\n\n";
+        "🎂 BIRTHDAY QUIZ ANSWERS ❤️\n\n";
 
 
     questions.forEach(
         (q, index) => {
 
             message +=
-                "*Q" +
+                "Q" +
                 (index + 1) +
-                ".* " +
+                ". " +
                 q.question +
                 "\n";
 
@@ -1438,18 +1469,20 @@ function sendAnswers() {
         "❤️ Happy Birthday Bestie!";
 
 
+    /*
+       WhatsApp click-to-chat URL
+    */
+
     const whatsappURL =
-
         "https://wa.me/" +
-
         YOUR_WHATSAPP +
-
         "?text=" +
+        encodeURIComponent(message);
 
-        encodeURIComponent(
-            message
-        );
 
+    /*
+       Open WhatsApp
+    */
 
     window.location.href =
         whatsappURL;
@@ -1529,7 +1562,11 @@ function createFloating() {
 
 
         setTimeout(
-            () => item.remove(),
+            () => {
+
+                item.remove();
+
+            },
             11000
         );
 
@@ -1602,7 +1639,11 @@ function createConfetti() {
 
 
         setTimeout(
-            () => item.remove(),
+            () => {
+
+                item.remove();
+
+            },
             5000
         );
 
@@ -1611,7 +1652,7 @@ function createConfetti() {
 }
 
 
-/* Background animation */
+/* Start floating animation */
 
 createFloating();
 
